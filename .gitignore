@@ -32,3 +32,5 @@ docs/
 artifacts-zk/
 cache-zk/
 zk-libraries.json
+
+keystore/

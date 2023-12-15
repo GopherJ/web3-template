@@ -99,8 +99,7 @@ export const NETWORKS_RPC_URL: iParamsPerNetwork<string> = {
     (INFURA_KEY
       ? `https://linea-goerli.infura.io/v3/${INFURA_KEY}`
       : `https://rpc.goerli.linea.build`),
-  [eEthereumNetwork.avalanche]:
-    RPC_URL || "https://api.avax.network/ext/bc/C/rpc",
+  [eEthereumNetwork.avalanche]: RPC_URL || "https://avalanche.drpc.org",
   [eEthereumNetwork.optimism]:
     RPC_URL || `https://opt-mainnet.g.alchemy.com/v2/${ALCHEMY_KEY}`,
   [eEthereumNetwork.scroll]: RPC_URL || `https://rpc.scroll.io`,
