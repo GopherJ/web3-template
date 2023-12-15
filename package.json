@@ -25,6 +25,8 @@
     "ethereumjs-abi": "https://registry.npmjs.org/ethereumjs-abi/-/ethereumjs-abi-0.6.8.tgz"
   },
   "devDependencies": {
+    "@arbitrum/nitro-contracts": "^1.1.0",
+    "@arbitrum/sdk": "^3.1.13",
     "@ethereumjs/rlp": "^5.0.0",
     "@ethereumjs/trie": "^6.0.0",
     "@ethereumjs/tx": "^5.0.0",
@@ -54,6 +56,7 @@
     "@types/lowdb": "1.0.9",
     "@types/mocha": "^9.1.1",
     "@types/node": "^18.0.6",
+    "arb-shared-dependencies": "^1.0.0",
     "async": "^3.2.4",
     "axios": "^1.5.1",
     "bignumber.js": "^9.1.1",

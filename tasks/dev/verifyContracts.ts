@@ -1,8 +1,5 @@
 import {task} from "hardhat/config";
-import {
-  ETHERSCAN_VERIFICATION_CONTRACTS,
-  ETHERSCAN_VERIFICATION_JOBS,
-} from "../../helpers/constants";
+import {ETHERSCAN_VERIFICATION_JOBS} from "../../helpers/constants";
 
 task("verify-contracts", "Verify deployed contracts on etherscan").setAction(
   async (_, DRE) => {

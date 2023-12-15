@@ -4,6 +4,7 @@ import {
   ALCHEMY_KEY,
   ARBITRUM_GOERLI_CHAINID,
   ARBITRUM_ONE_CHAINID,
+  ARBITRUM_SEPOLIA_CHAINID,
   FORK,
   FORK_BLOCK_NUMBER,
   FORK_CHAINID,
@@ -54,6 +55,12 @@ export const NETWORKS_RPC_URL: iParamsPerNetwork<string> = {
     (ALCHEMY_KEY
       ? `https://eth-goerli.alchemyapi.io/v2/${ALCHEMY_KEY}`
       : `https://goerli.infura.io/v3/${INFURA_KEY}`),
+  [eEthereumNetwork.sepolia]:
+    L1_RPC_URL ||
+    RPC_URL ||
+    (ALCHEMY_KEY
+      ? `https://eth-sepolia.alchemyapi.io/v2/${ALCHEMY_KEY}`
+      : `https://sepolia.infura.io/v3/${INFURA_KEY}`),
   [eEthereumNetwork.mainnet]:
     L1_RPC_URL ||
     RPC_URL ||
@@ -74,6 +81,10 @@ export const NETWORKS_RPC_URL: iParamsPerNetwork<string> = {
     L2_RPC_URL ||
     RPC_URL ||
     `https://arb-goerli.g.alchemy.com/v2/${ALCHEMY_KEY}`,
+  [eEthereumNetwork.arbitrumSepolia]:
+    L2_RPC_URL ||
+    RPC_URL ||
+    `https://arb-sepolia.g.alchemy.com/v2/${ALCHEMY_KEY}`,
   [eEthereumNetwork.polygon]:
     RPC_URL || `https://polygon-mainnet.g.alchemy.com/v2/${ALCHEMY_KEY}`,
   [eEthereumNetwork.polygonMumbai]:
@@ -107,6 +118,7 @@ export const NETWORKS_RPC_URL: iParamsPerNetwork<string> = {
 export const CHAINS_ID: iParamsPerNetwork<number | undefined> = {
   [eEthereumNetwork.mainnet]: MAINNET_CHAINID,
   [eEthereumNetwork.goerli]: GOERLI_CHAINID,
+  [eEthereumNetwork.sepolia]: GOERLI_CHAINID,
   [eEthereumNetwork.hardhat]: FORK ? FORK_CHAINID : HARDHAT_CHAINID,
   [eEthereumNetwork.anvil]: HARDHAT_CHAINID,
   [eEthereumNetwork.ganache]: undefined,
@@ -115,6 +127,7 @@ export const CHAINS_ID: iParamsPerNetwork<number | undefined> = {
   [eEthereumNetwork.moonbase]: MOONBASE_CHAINID,
   [eEthereumNetwork.arbitrum]: ARBITRUM_ONE_CHAINID,
   [eEthereumNetwork.arbitrumGoerli]: ARBITRUM_GOERLI_CHAINID,
+  [eEthereumNetwork.arbitrumSepolia]: ARBITRUM_SEPOLIA_CHAINID,
   [eEthereumNetwork.polygon]: POLYGON_CHAINID,
   [eEthereumNetwork.polygonMumbai]: POLYGON_MUMBAI_CHAINID,
   [eEthereumNetwork.polygonZkevm]: POLYGON_ZKEVM_CHAINID,
@@ -128,6 +141,7 @@ export const CHAINS_ID: iParamsPerNetwork<number | undefined> = {
 export const BLOCK_TO_FORK: iParamsPerNetwork<number | undefined> = {
   [eEthereumNetwork.mainnet]: undefined,
   [eEthereumNetwork.goerli]: undefined,
+  [eEthereumNetwork.sepolia]: undefined,
   [eEthereumNetwork.hardhat]: undefined,
   [eEthereumNetwork.anvil]: undefined,
   [eEthereumNetwork.ganache]: undefined,
@@ -136,6 +150,7 @@ export const BLOCK_TO_FORK: iParamsPerNetwork<number | undefined> = {
   [eEthereumNetwork.moonbase]: undefined,
   [eEthereumNetwork.arbitrum]: undefined,
   [eEthereumNetwork.arbitrumGoerli]: undefined,
+  [eEthereumNetwork.arbitrumSepolia]: undefined,
   [eEthereumNetwork.polygon]: undefined,
   [eEthereumNetwork.polygonMumbai]: undefined,
   [eEthereumNetwork.polygonZkevm]: undefined,

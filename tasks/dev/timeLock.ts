@@ -69,6 +69,29 @@ task("decode-buffered-txs", "Decode buffered transactions").setAction(
   }
 );
 
+task("renew-buffered-txs", "Renew buffered transactions").setAction(
+  async (_, DRE) => {
+    await DRE.run("set-DRE");
+    const {getTimeLockDataInDb, clearTimeLockDataInDb} = await import(
+      "../../helpers/contracts-getters"
+    );
+    const {dryRunMultipleEncodedData} = await import(
+      "../../helpers/contracts-helpers"
+    );
+    const actions = await getTimeLockDataInDb();
+
+    const targets: string[] = [];
+    const datas: string[] = [];
+    for (const a of actions) {
+      const [target, , , data] = a.action;
+      targets.push(target);
+      datas.push(data.toString());
+    }
+    await clearTimeLockDataInDb();
+    await dryRunMultipleEncodedData(targets, datas, []);
+  }
+);
+
 task("queue-buffered-txs", "Queue buffered transactions").setAction(
   async (_, DRE) => {
     await DRE.run("set-DRE");

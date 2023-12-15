@@ -7,7 +7,7 @@ import {
   setDRE,
 } from "../../helpers/misc-utils";
 import {HardhatRuntimeEnvironment, HttpNetworkConfig} from "hardhat/types";
-import {FORK, GLOBAL_OVERRIDES} from "../../helpers/constants";
+import {FORK, GLOBAL_OVERRIDES, hasFeeData} from "../../helpers/constants";
 import {utils} from "ethers";
 import {Provider} from "zksync-web3";
 
@@ -43,7 +43,7 @@ task(
 
   setDRE(_DRE);
 
-  if (isPublicTestnet() || isMainnet()) {
+  if ((!hasFeeData(GLOBAL_OVERRIDES) && isPublicTestnet()) || isMainnet()) {
     const feeData = await _DRE.ethers.provider.getFeeData();
     if (feeData.maxFeePerGas && feeData.maxPriorityFeePerGas) {
       GLOBAL_OVERRIDES.type = 2;

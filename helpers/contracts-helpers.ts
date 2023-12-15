@@ -137,7 +137,7 @@ export const withSaveAndVerify = async (
   libraries?: Libraries,
   signatures?: iFunctionSignature[]
 ) =>
-  retry(async () => {
+  await retry(async () => {
     const addressInDb = await getContractAddressInDb(id);
     if (DEPLOY_INCREMENTAL && isNotFalsyOrZeroAddress(addressInDb)) {
       console.log("contract address is already in db", id);
@@ -191,12 +191,12 @@ export const printContracts = () => {
 
   const entries = Object.entries<DbEntry>(db.getState()).filter(
     ([key, value]) => {
-      return !!value[network];
+      return !!value;
     }
   );
 
   const contractsPrint = entries.map(
-    ([key, value]: [string, DbEntry]) => `${key}: ${value[network].address}`
+    ([key, value]: [string, DbEntry]) => `${key}: ${value.address}`
   );
 
   console.log("N# Contracts:", entries.length);
@@ -209,16 +209,12 @@ export const verifyContracts = async (limit = 1) => {
   const entries = Object.entries<DbEntry>(db.getState()).filter(
     ([key, value]) => {
       // constructorArgs must be Array to make the contract verifiable
-      return (
-        isVerifiable(key) &&
-        !!value[network] &&
-        Array.isArray(value[network].constructorArgs)
-      );
+      return isVerifiable(key) && Array.isArray(value.constructorArgs);
     }
   );
 
   await mapLimit(entries, limit, async ([key, value]) => {
-    const {address, constructorArgs = [], libraries} = value[network];
+    const {address, constructorArgs = [], libraries} = value;
     let artifact: Artifact | undefined = undefined;
     try {
       artifact = await DRE.artifacts.readArtifact(key);
@@ -315,7 +311,7 @@ export const registerContractInDb = async (
   signatures?: iFunctionSignature[]
 ) => {
   const currentNetwork = DRE.network.name;
-  const key = `${id}.${DRE.network.name}`;
+  const key = `${id}`;
 
   if (isFork() || !isLocalTestnet()) {
     console.log(`*** ${id} ***\n`);
@@ -348,7 +344,7 @@ export const insertContractAddressInDb = async (
   address: tEthereumAddress,
   verifiable = true
 ) => {
-  const key = `${id}.${DRE.network.name}`;
+  const key = `${id}`;
   const old = (await getDb().get(key).value()) || {};
   const newValue = {
     ...old,
@@ -363,8 +359,7 @@ export const insertContractAddressInDb = async (
 };
 
 export const getContractAddressInDb = async (id: eContractid | string) => {
-  return ((await getDb().get(`${id}.${DRE.network.name}`).value()) || {})
-    .address;
+  return ((await getDb().get(`${id}`).value()) || {}).address;
 };
 
 export const normalizeLibraryAddresses = (

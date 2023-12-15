@@ -31,7 +31,7 @@ type VerificationArgs = {
 };
 
 const getIsVerified = async (contractId: string, address: string) => {
-  const value = await getDb().get(`${contractId}.${DRE.network.name}`).value();
+  const value = await getDb().get(`${contractId}`).value();
   const isVerified =
     value?.address == address &&
     (value?.verified || (await hasVerifiedSourceCode(address)));
@@ -45,7 +45,7 @@ const getIsVerified = async (contractId: string, address: string) => {
 
 const setIsVerified = async (contractId: string, address: string) => {
   const db = getDb();
-  const key = `${contractId}.${DRE.network.name}`;
+  const key = `${contractId}`;
   const value = await db.get(key).value();
   if (value?.address != address || value?.verified) {
     return;

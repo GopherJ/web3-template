@@ -26,6 +26,8 @@ import {
   MOONBASE_CHAINID,
   LINEA_CHAINID,
   LINEA_GOERLI_CHAINID,
+  ARBITRUM_SEPOLIA_CHAINID,
+  SEPOLIA_CHAINID,
 } from "../helpers/constants";
 import dotenv from "dotenv";
 import minimatch from "minimatch";
@@ -48,7 +50,9 @@ export const isPublicTestnet = (): boolean => {
   return (
     [
       GOERLI_CHAINID,
+      SEPOLIA_CHAINID,
       ARBITRUM_GOERLI_CHAINID,
+      ARBITRUM_SEPOLIA_CHAINID,
       ZKSYNC_GOERLI_CHAINID,
       POLYGON_ZKEVM_GOERLI_CHAINID,
       POLYGON_MUMBAI_CHAINID,
@@ -57,7 +61,9 @@ export const isPublicTestnet = (): boolean => {
     ].includes(DRE.network.config.chainId!) ||
     [
       eEthereumNetwork.goerli,
+      eEthereumNetwork.sepolia,
       eEthereumNetwork.arbitrumGoerli,
+      eEthereumNetwork.arbitrumSepolia,
       eEthereumNetwork.zksyncGoerli,
       eEthereumNetwork.polygonZkevmGoerli,
       eEthereumNetwork.polygonMumbai,

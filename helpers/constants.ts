@@ -6,12 +6,14 @@ import {input} from "./wallet";
 import {version} from "../package.json";
 import git from "git-rev-sync";
 import {AccessListish} from "ethers/lib/utils";
+import {isUndefined} from "lodash";
 
 export const ZERO_ADDRESS = "0x0000000000000000000000000000000000000000";
 export const ONE_ADDRESS = "0x0000000000000000000000000000000000000001";
 
 export const HARDHAT_CHAINID = 31337;
 export const GOERLI_CHAINID = 5;
+export const SEPOLIA_CHAINID = 11155111;
 export const FORK_CHAINID = 522;
 export const MAINNET_CHAINID = 1;
 export const PARALLEL_CHAINID = 1592;
@@ -19,6 +21,7 @@ export const MOONBEAM_CHAINID = 1284;
 export const MOONBASE_CHAINID = 1287;
 export const ARBITRUM_ONE_CHAINID = 42161;
 export const ARBITRUM_GOERLI_CHAINID = 421613;
+export const ARBITRUM_SEPOLIA_CHAINID = 421614;
 export const POLYGON_CHAINID = 137;
 export const POLYGON_ZKEVM_CHAINID = 1101;
 export const POLYGON_ZKEVM_GOERLI_CHAINID = 1442;
@@ -93,10 +96,14 @@ export const ETHERSCAN_VERIFICATION_JOBS = parseInt(
 
 export const GOERLI_ETHERSCAN_KEY =
   process.env.GOERLI_ETHERSCAN_KEY || ETHERSCAN_KEY;
+export const SEPOLIA_ETHERSCAN_KEY =
+  process.env.SEPOLIA_ETHERSCAN_KEY || ETHERSCAN_KEY;
 export const ARBITRUM_ETHERSCAN_KEY =
   process.env.ARBITRUM_ETHERSCAN_KEY || ETHERSCAN_KEY;
 export const ARBITRUM_GOERLI_ETHERSCAN_KEY =
   process.env.ARBITRUM_GOERLI_ETHERSCAN_KEY || ARBITRUM_ETHERSCAN_KEY;
+export const ARBITRUM_SEPOLIA_ETHERSCAN_KEY =
+  process.env.ARBITRUM_SEPOLIA_ETHERSCAN_KEY || ARBITRUM_ETHERSCAN_KEY;
 export const POLYGON_ETHERSCAN_KEY =
   process.env.POLYGON_ETHERSCAN_KEY || ETHERSCAN_KEY;
 export const POLYGON_MUMBAI_ETHERSCAN_KEY =
@@ -118,7 +125,10 @@ export const ETHERSCAN_NETWORKS = [
   "localhost",
   "mainnet",
   "goerli",
+  "sepolia",
   "arbitrum",
+  "arbitrumGoerli",
+  "arbitrumSepolia",
   "polygon",
   "matic",
   "polygonMumbai",
@@ -135,8 +145,10 @@ export const ETHERSCAN_APIS = {
   localhost: "http://localhost:4000/api",
   mainnet: "https://api.etherscan.io/api",
   goerli: "https://api-goerli.etherscan.io/api",
+  sepolia: "https://api-sepolia.etherscan.io/api",
   arbitrum: "https://api.arbiscan.io/api",
   arbitrumGoerli: "https://api-goerli.arbiscan.io/api",
+  arbitrumSepolia: "https://api-sepolia.arbiscan.io/api",
   polygon: "https://api.polygonscan.com/api",
   matic: "https://api.polygonscan.com/api",
   polygonMumbai: "https://api-mumbai.polygonscan.com/api",
@@ -154,8 +166,10 @@ export const BROWSER_URLS = {
   localhost: "http://localhost:4000",
   mainnet: "https://etherscan.io",
   goerli: "https://goerli.etherscan.io",
+  sepolia: "https://sepolia.etherscan.io",
   arbitrum: "https://arbiscan.io",
   arbitrumGoerli: "https://goerli.arbiscan.io",
+  arbitrumSepolia: "https://sepolia.arbiscan.io",
   polygonZkevm: "https://zkevm.polygonscan.com",
   polygonZkevmGoerli: "https://testnet-zkevm.polygonscan.com",
   polygon: "https://polygonscan.com",
@@ -213,10 +227,20 @@ export interface Overrides {
   ccipReadEnabled?: boolean;
 }
 export const GLOBAL_OVERRIDES: Overrides = {
-  maxFeePerGas: ethers.utils.parseUnits("30", "gwei"),
-  maxPriorityFeePerGas: ethers.utils.parseUnits("3", "gwei"),
+  // maxFeePerGas: ethers.utils.parseUnits("30", "gwei"),
+  // maxPriorityFeePerGas: ethers.utils.parseUnits("3", "gwei"),
   type: 2,
   // gasLimit: 30_000_000,
+};
+
+export const hasFeeData = (overrides: Overrides): boolean => {
+  const {maxFeePerGas, maxPriorityFeePerGas, type, gasPrice} = overrides;
+  return (
+    (!isUndefined(maxFeePerGas) &&
+      !isUndefined(maxPriorityFeePerGas) &&
+      type === 2) ||
+    (!isUndefined(gasPrice) && type === 1)
+  );
 };
 
 export const JSONRPC_VARIANT = process.env.JSONRPC_VARIANT || "hardhat";
@@ -235,7 +259,7 @@ export const MULTI_SIG_NONCE = process.env.MULTI_SIG_NONCE
   ? parseInt(process.env.MULTI_SIG_NONCE)
   : undefined;
 export const MULTI_SEND_CHUNK_SIZE = parseInt(
-  process.env.MULTI_SEND_CHUNK_SIZE || "30"
+  process.env.MULTI_SEND_CHUNK_SIZE || "45"
 );
 
 export const VERSION = version;

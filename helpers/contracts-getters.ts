@@ -99,9 +99,7 @@ export const getMultiSendCallOnly = async (address?: tEthereumAddress) =>
   await MultiSendCallOnly__factory.connect(
     address ||
       (
-        await getDb()
-          .get(`${eContractid.MultiSendCallOnly}.${DRE.network.name}`)
-          .value()
+        await getDb().get(`${eContractid.MultiSendCallOnly}`).value()
       ).address,
     await getFirstSigner()
   );
@@ -110,9 +108,7 @@ export const getExecutorWithTimelock = async (address?: tEthereumAddress) =>
   await ExecutorWithTimelock__factory.connect(
     address ||
       (
-        await getDb()
-          .get(`${eContractid.ExecutorWithTimelock}.${DRE.network.name}`)
-          .value()
+        await getDb().get(`${eContractid.ExecutorWithTimelock}`).value()
       ).address,
     await getFirstSigner()
   );
@@ -127,7 +123,7 @@ export const insertTimeLockDataInDb = async ({
   queueExpireTime,
   executeExpireTime,
 }: TimeLockData) => {
-  const key = `${eContractid.MultiSendCallOnly}.${DRE.network.name}`;
+  const key = `${eContractid.MultiSendCallOnly}`;
   const oldValue = (await getDb().get(key).value()) || {};
   const queue = oldValue.queue || [];
   queue.push({
@@ -156,12 +152,23 @@ export const getTimeLockDataInDb = async (): Promise<
     cancelData: string;
   }[]
 > => {
-  const key = `${eContractid.MultiSendCallOnly}.${DRE.network.name}`;
+  const key = `${eContractid.MultiSendCallOnly}`;
   const oldValue = (await getDb().get(key).value()) || {};
   const queue = oldValue.queue || [];
   return queue.map((x) =>
     pick(x, ["action", "actionHash", "queueData", "executeData", "cancelData"])
   );
+};
+
+export const clearTimeLockDataInDb = async () => {
+  const key = `${eContractid.MultiSendCallOnly}`;
+  const oldValue = (await getDb().get(key).value()) || {};
+  const queue = [];
+  const newValue = {
+    ...oldValue,
+    queue,
+  };
+  await getDb().set(key, newValue).write();
 };
 
 export const getCurrentTime = async () => {

@@ -31,6 +31,7 @@ export enum DryRunExecutor {
 
 export interface iEthereumParamsPerNetwork<T> {
   [eEthereumNetwork.goerli]: T;
+  [eEthereumNetwork.sepolia]: T;
   [eEthereumNetwork.mainnet]: T;
   [eEthereumNetwork.hardhat]: T;
   [eEthereumNetwork.anvil]: T;
@@ -40,6 +41,7 @@ export interface iEthereumParamsPerNetwork<T> {
   [eEthereumNetwork.moonbase]: T;
   [eEthereumNetwork.arbitrum]: T;
   [eEthereumNetwork.arbitrumGoerli]: T;
+  [eEthereumNetwork.arbitrumSepolia]: T;
   [eEthereumNetwork.polygon]: T;
   [eEthereumNetwork.polygonMumbai]: T;
   [eEthereumNetwork.polygonZkevm]: T;
@@ -59,6 +61,7 @@ export enum eContractid {
 export enum eEthereumNetwork {
   ropsten = "ropsten",
   goerli = "goerli",
+  sepolia = "sepolia",
   mainnet = "mainnet",
   hardhat = "hardhat",
   ganache = "ganache",
@@ -69,6 +72,7 @@ export enum eEthereumNetwork {
   moonbase = "moonbase",
   arbitrum = "arbitrum",
   arbitrumGoerli = "arbitrumGoerli",
+  arbitrumSepolia = "arbitrumSepolia",
   polygon = "polygon",
   polygonMumbai = "polygonMumbai",
   polygonZkevm = "polygonZkevm",
@@ -89,12 +93,10 @@ export type ConstructorArgs = (
 )[];
 
 export interface DbEntry {
-  [network: string]: {
-    deployer: string;
-    address: string;
-    constructorArgs: ConstructorArgs;
-    verified: boolean;
-  };
+  deployer: string;
+  address: string;
+  constructorArgs: ConstructorArgs;
+  verified: boolean;
 }
 
 export type TimeLockData = {
