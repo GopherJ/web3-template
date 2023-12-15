@@ -11,8 +11,6 @@ import {
   GOERLI_CHAINID,
   HARDHAT_CHAINID,
   INFURA_KEY,
-  L1_RPC_URL,
-  L2_RPC_URL,
   LINEA_CHAINID,
   LINEA_GOERLI_CHAINID,
   MAINNET_CHAINID,
@@ -26,6 +24,11 @@ import {
   RPC_URL,
   ZKSYNC_CHAINID,
   ZKSYNC_GOERLI_CHAINID,
+  AVALANCHE_CHAINID,
+  OPTIMISM_CHAINID,
+  SCROLL_CHAINID,
+  BASE_CHAINID,
+  MANTA_CHAINID,
 } from "./helpers/constants";
 import {HardhatNetworkForkingUserConfig} from "hardhat/types";
 
@@ -50,19 +53,16 @@ export const buildForkConfig = ():
 
 export const NETWORKS_RPC_URL: iParamsPerNetwork<string> = {
   [eEthereumNetwork.goerli]:
-    L1_RPC_URL ||
     RPC_URL ||
     (ALCHEMY_KEY
       ? `https://eth-goerli.alchemyapi.io/v2/${ALCHEMY_KEY}`
       : `https://goerli.infura.io/v3/${INFURA_KEY}`),
   [eEthereumNetwork.sepolia]:
-    L1_RPC_URL ||
     RPC_URL ||
     (ALCHEMY_KEY
       ? `https://eth-sepolia.alchemyapi.io/v2/${ALCHEMY_KEY}`
       : `https://sepolia.infura.io/v3/${INFURA_KEY}`),
   [eEthereumNetwork.mainnet]:
-    L1_RPC_URL ||
     RPC_URL ||
     (ALCHEMY_KEY
       ? `https://eth-mainnet.alchemyapi.io/v2/${ALCHEMY_KEY}`
@@ -74,45 +74,38 @@ export const NETWORKS_RPC_URL: iParamsPerNetwork<string> = {
   [eEthereumNetwork.moonbeam]: "https://rpc.api.moonbeam.network",
   [eEthereumNetwork.moonbase]: "https://rpc.testnet.moonbeam.network",
   [eEthereumNetwork.arbitrum]:
-    L2_RPC_URL ||
-    RPC_URL ||
-    `https://arb-mainnet.g.alchemy.com/v2/${ALCHEMY_KEY}`,
+    RPC_URL || `https://arb-mainnet.g.alchemy.com/v2/${ALCHEMY_KEY}`,
   [eEthereumNetwork.arbitrumGoerli]:
-    L2_RPC_URL ||
-    RPC_URL ||
-    `https://arb-goerli.g.alchemy.com/v2/${ALCHEMY_KEY}`,
+    RPC_URL || `https://arb-goerli.g.alchemy.com/v2/${ALCHEMY_KEY}`,
   [eEthereumNetwork.arbitrumSepolia]:
-    L2_RPC_URL ||
-    RPC_URL ||
-    `https://arb-sepolia.g.alchemy.com/v2/${ALCHEMY_KEY}`,
+    RPC_URL || `https://arb-sepolia.g.alchemy.com/v2/${ALCHEMY_KEY}`,
   [eEthereumNetwork.polygon]:
     RPC_URL || `https://polygon-mainnet.g.alchemy.com/v2/${ALCHEMY_KEY}`,
   [eEthereumNetwork.polygonMumbai]:
     RPC_URL || `https://polygon-mumbai.g.alchemy.com/v2/${ALCHEMY_KEY}`,
   [eEthereumNetwork.polygonZkevm]:
-    L2_RPC_URL ||
-    RPC_URL ||
-    `https://polygonzkevm-mainnet.g.alchemy.com/v2/${ALCHEMY_KEY}`,
+    RPC_URL || `https://polygonzkevm-mainnet.g.alchemy.com/v2/${ALCHEMY_KEY}`,
   [eEthereumNetwork.polygonZkevmGoerli]:
-    L2_RPC_URL ||
-    RPC_URL ||
-    `https://polygonzkevm-testnet.g.alchemy.com/v2/${ALCHEMY_KEY}`,
-  [eEthereumNetwork.zksync]:
-    L2_RPC_URL || RPC_URL || `https://mainnet.era.zksync.io`,
-  [eEthereumNetwork.zksyncGoerli]:
-    L2_RPC_URL || RPC_URL || `https://testnet.era.zksync.dev`,
+    RPC_URL || `https://polygonzkevm-testnet.g.alchemy.com/v2/${ALCHEMY_KEY}`,
+  [eEthereumNetwork.zksync]: RPC_URL || `https://mainnet.era.zksync.io`,
+  [eEthereumNetwork.zksyncGoerli]: RPC_URL || `https://testnet.era.zksync.dev`,
   [eEthereumNetwork.linea]:
-    L2_RPC_URL ||
     RPC_URL ||
     (INFURA_KEY
       ? `https://linea-mainnet.infura.io/v3/${INFURA_KEY}`
       : "https://rpc.linea.build"),
   [eEthereumNetwork.lineaGoerli]:
-    L2_RPC_URL ||
     RPC_URL ||
     (INFURA_KEY
       ? `https://linea-goerli.infura.io/v3/${INFURA_KEY}`
       : `https://rpc.goerli.linea.build`),
+  [eEthereumNetwork.avalanche]:
+    RPC_URL || "https://api.avax.network/ext/bc/C/rpc",
+  [eEthereumNetwork.optimism]:
+    RPC_URL || `https://opt-mainnet.g.alchemy.com/v2/${ALCHEMY_KEY}`,
+  [eEthereumNetwork.scroll]: RPC_URL || `https://rpc.scroll.io`,
+  [eEthereumNetwork.base]: RPC_URL || `https://mainnet.base.org`,
+  [eEthereumNetwork.manta]: RPC_URL || `https://pacific-rpc.manta.network/http`,
 };
 
 export const CHAINS_ID: iParamsPerNetwork<number | undefined> = {
@@ -136,6 +129,11 @@ export const CHAINS_ID: iParamsPerNetwork<number | undefined> = {
   [eEthereumNetwork.zksyncGoerli]: ZKSYNC_GOERLI_CHAINID,
   [eEthereumNetwork.linea]: LINEA_CHAINID,
   [eEthereumNetwork.lineaGoerli]: LINEA_GOERLI_CHAINID,
+  [eEthereumNetwork.avalanche]: AVALANCHE_CHAINID,
+  [eEthereumNetwork.optimism]: OPTIMISM_CHAINID,
+  [eEthereumNetwork.scroll]: SCROLL_CHAINID,
+  [eEthereumNetwork.base]: BASE_CHAINID,
+  [eEthereumNetwork.manta]: MANTA_CHAINID,
 };
 
 export const BLOCK_TO_FORK: iParamsPerNetwork<number | undefined> = {
@@ -159,4 +157,9 @@ export const BLOCK_TO_FORK: iParamsPerNetwork<number | undefined> = {
   [eEthereumNetwork.zksyncGoerli]: undefined,
   [eEthereumNetwork.linea]: undefined,
   [eEthereumNetwork.lineaGoerli]: undefined,
+  [eEthereumNetwork.avalanche]: undefined,
+  [eEthereumNetwork.optimism]: undefined,
+  [eEthereumNetwork.scroll]: undefined,
+  [eEthereumNetwork.base]: undefined,
+  [eEthereumNetwork.manta]: undefined,
 };

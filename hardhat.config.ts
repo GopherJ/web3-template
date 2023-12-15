@@ -27,6 +27,11 @@ import {
   LINEA_GOERLI_ETHERSCAN_KEY,
   ARBITRUM_SEPOLIA_ETHERSCAN_KEY,
   SEPOLIA_ETHERSCAN_KEY,
+  AVALANCHE_ETHERSCAN_KEY,
+  OPTIMISM_ETHERSCAN_KEY,
+  SCROLL_ETHERSCAN_KEY,
+  BASE_ETHERSCAN_KEY,
+  MANTA_ETHERSCAN_KEY,
 } from "./helpers/constants";
 import {accounts} from "./wallets";
 import {
@@ -243,6 +248,31 @@ const hardhatConfig: HardhatUserConfig = {
       url: NETWORKS_RPC_URL[eEthereumNetwork.mainnet],
       accounts: DEPLOYER,
     },
+    avalanche: {
+      chainId: CHAINS_ID[eEthereumNetwork.avalanche],
+      url: NETWORKS_RPC_URL[eEthereumNetwork.avalanche],
+      accounts: DEPLOYER,
+    },
+    optimism: {
+      chainId: CHAINS_ID[eEthereumNetwork.optimism],
+      url: NETWORKS_RPC_URL[eEthereumNetwork.optimism],
+      accounts: DEPLOYER,
+    },
+    scroll: {
+      chainId: CHAINS_ID[eEthereumNetwork.scroll],
+      url: NETWORKS_RPC_URL[eEthereumNetwork.scroll],
+      accounts: DEPLOYER,
+    },
+    base: {
+      chainId: CHAINS_ID[eEthereumNetwork.base],
+      url: NETWORKS_RPC_URL[eEthereumNetwork.base],
+      accounts: DEPLOYER,
+    },
+    manta: {
+      chainId: CHAINS_ID[eEthereumNetwork.manta],
+      url: NETWORKS_RPC_URL[eEthereumNetwork.manta],
+      accounts: DEPLOYER,
+    },
   },
   etherscan: {
     apiKey: {
@@ -261,6 +291,11 @@ const hardhatConfig: HardhatUserConfig = {
       moonbase: MOONBASE_ETHERSCAN_KEY,
       linea: LINEA_ETHERSCAN_KEY,
       lineaGoerli: LINEA_GOERLI_ETHERSCAN_KEY,
+      avalanche: AVALANCHE_ETHERSCAN_KEY,
+      optimism: OPTIMISM_ETHERSCAN_KEY,
+      scroll: SCROLL_ETHERSCAN_KEY,
+      base: BASE_ETHERSCAN_KEY,
+      manta: MANTA_ETHERSCAN_KEY,
     },
     customChains: [
       eEthereumNetwork.localhost,
@@ -279,6 +314,11 @@ const hardhatConfig: HardhatUserConfig = {
       eEthereumNetwork.moonbase,
       eEthereumNetwork.linea,
       eEthereumNetwork.lineaGoerli,
+      eEthereumNetwork.avalanche,
+      eEthereumNetwork.optimism,
+      eEthereumNetwork.scroll,
+      eEthereumNetwork.base,
+      eEthereumNetwork.manta,
     ].map((network) => ({
       network,
       chainId: CHAINS_ID[network]!,

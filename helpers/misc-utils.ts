@@ -28,6 +28,11 @@ import {
   LINEA_GOERLI_CHAINID,
   ARBITRUM_SEPOLIA_CHAINID,
   SEPOLIA_CHAINID,
+  SCROLL_CHAINID,
+  AVALANCHE_CHAINID,
+  OPTIMISM_CHAINID,
+  BASE_CHAINID,
+  MANTA_CHAINID,
 } from "../helpers/constants";
 import dotenv from "dotenv";
 import minimatch from "minimatch";
@@ -134,6 +139,46 @@ export const isLinea = (): boolean => {
   );
 };
 
+export const isScroll = (): boolean => {
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+  return (
+    [SCROLL_CHAINID].includes(DRE.network.config.chainId!) ||
+    [eEthereumNetwork.scroll].includes(FORK as eEthereumNetwork)
+  );
+};
+
+export const isAvalanche = (): boolean => {
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+  return (
+    [AVALANCHE_CHAINID].includes(DRE.network.config.chainId!) ||
+    [eEthereumNetwork.avalanche].includes(FORK as eEthereumNetwork)
+  );
+};
+
+export const isOptimism = (): boolean => {
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+  return (
+    [OPTIMISM_CHAINID].includes(DRE.network.config.chainId!) ||
+    [eEthereumNetwork.optimism].includes(FORK as eEthereumNetwork)
+  );
+};
+
+export const isBase = (): boolean => {
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+  return (
+    [BASE_CHAINID].includes(DRE.network.config.chainId!) ||
+    [eEthereumNetwork.base].includes(FORK as eEthereumNetwork)
+  );
+};
+
+export const isManta = (): boolean => {
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+  return (
+    [MANTA_CHAINID].includes(DRE.network.config.chainId!) ||
+    [eEthereumNetwork.manta].includes(FORK as eEthereumNetwork)
+  );
+};
+
 export const isMainnet = (): boolean =>
   isEthereum() ||
   isMoonbeam() ||
@@ -141,7 +186,12 @@ export const isMainnet = (): boolean =>
   isZkSync() ||
   isPolygon() ||
   isPolygonZkEVM() ||
-  isLinea();
+  isLinea() ||
+  isScroll() ||
+  isAvalanche() ||
+  isOptimism() ||
+  isBase() ||
+  isManta();
 
 export const sleep = (ms: number) =>
   new Promise((resolve) => setTimeout(resolve, ms));

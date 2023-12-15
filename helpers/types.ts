@@ -50,6 +50,11 @@ export interface iEthereumParamsPerNetwork<T> {
   [eEthereumNetwork.zksyncGoerli]: T;
   [eEthereumNetwork.linea]: T;
   [eEthereumNetwork.lineaGoerli]: T;
+  [eEthereumNetwork.avalanche]: T;
+  [eEthereumNetwork.optimism]: T;
+  [eEthereumNetwork.scroll]: T;
+  [eEthereumNetwork.base]: T;
+  [eEthereumNetwork.manta]: T;
 }
 
 export enum eContractid {
@@ -81,6 +86,11 @@ export enum eEthereumNetwork {
   zksyncGoerli = "zksyncGoerli",
   linea = "linea",
   lineaGoerli = "lineaGoerli",
+  avalanche = "avalanche",
+  optimism = "optimism",
+  scroll = "scroll",
+  base = "base",
+  manta = "manta",
 }
 
 export type ConstructorArgs = (

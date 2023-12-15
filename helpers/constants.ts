@@ -30,10 +30,13 @@ export const ZKSYNC_CHAINID = 324;
 export const ZKSYNC_GOERLI_CHAINID = 280;
 export const LINEA_GOERLI_CHAINID = 59140;
 export const LINEA_CHAINID = 59144;
+export const AVALANCHE_CHAINID = 43114;
+export const OPTIMISM_CHAINID = 10;
+export const SCROLL_CHAINID = 534352;
+export const BASE_CHAINID = 8453;
+export const MANTA_CHAINID = 169;
 
-export const L1_RPC_URL = process.env.L1_RPC_URL || "";
-export const L2_RPC_URL = process.env.L2_RPC_URL || "";
-export const RPC_URL = process.env.RPC_URL || L1_RPC_URL || L2_RPC_URL || "";
+export const RPC_URL = process.env.RPC_URL || "";
 
 export const INFURA_KEY = process.env.INFURA_KEY || "";
 export const ALCHEMY_KEY = process.env.ALCHEMY_KEY || "";
@@ -120,6 +123,16 @@ export const LINEA_ETHERSCAN_KEY =
   process.env.LINEA_ETHERSCAN_KEY || ETHERSCAN_KEY;
 export const LINEA_GOERLI_ETHERSCAN_KEY =
   process.env.LINEA_GOERLI_ETHERSCAN_KEY || LINEA_ETHERSCAN_KEY;
+export const AVALANCHE_ETHERSCAN_KEY =
+  process.env.AVALANCHE_ETHERSCAN_KEY || ETHERSCAN_KEY;
+export const OPTIMISM_ETHERSCAN_KEY =
+  process.env.OPTIMISM_ETHERSCAN_KEY || ETHERSCAN_KEY;
+export const SCROLL_ETHERSCAN_KEY =
+  process.env.SCROLL_ETHERSCAN_KEY || ETHERSCAN_KEY;
+export const BASE_ETHERSCAN_KEY =
+  process.env.BASE_ETHERSCAN_KEY || ETHERSCAN_KEY;
+export const MANTA_ETHERSCAN_KEY =
+  process.env.MANTA_ETHERSCAN_KEY || ETHERSCAN_KEY;
 
 export const ETHERSCAN_NETWORKS = [
   "localhost",
@@ -140,6 +153,11 @@ export const ETHERSCAN_NETWORKS = [
   "lineaGoerli",
   "moonbeam",
   "moonbase",
+  "avalanche",
+  "optimism",
+  "scroll",
+  "base",
+  "manta",
 ];
 export const ETHERSCAN_APIS = {
   localhost: "http://localhost:4000/api",
@@ -161,6 +179,11 @@ export const ETHERSCAN_APIS = {
   moonbase: "https://api-moonbase.moonscan.io/api",
   linea: "http://explorer.linea.build/api",
   lineaGoerli: "https://explorer.goerli.linea.build/api",
+  avalanche: "https://api.avascan.info/v2",
+  optimism: "https://api-optimistic.etherscan.io/api",
+  scroll: "https://api-scrollscan.com/api",
+  base: "https://api-basescan.org/api",
+  manta: "https://pacific-explorer.manta.network/api",
 };
 export const BROWSER_URLS = {
   localhost: "http://localhost:4000",
@@ -181,6 +204,11 @@ export const BROWSER_URLS = {
   moonbase: "https://moonbase.moonscan.io",
   linea: "https://explorer.linea.build",
   lineaGoerli: "https://explorer.goerli.linea.build",
+  avalanche: "https://avascan.info/blockchain/c",
+  optimism: "https://optimistic.etherscan.io",
+  scroll: "https://scrollscan.com",
+  base: "https://basescan.org",
+  manta: "https://pacific-explorer.manta.network",
 };
 
 export const DEFAULT_BLOCK_GAS_LIMIT = 40000000;
