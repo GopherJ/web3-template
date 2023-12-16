@@ -35,6 +35,7 @@ export const OPTIMISM_CHAINID = 10;
 export const SCROLL_CHAINID = 534352;
 export const BASE_CHAINID = 8453;
 export const MANTA_CHAINID = 169;
+export const BSC_CHAINID = 56;
 
 export const RPC_URL = process.env.RPC_URL || "";
 
@@ -133,6 +134,7 @@ export const BASE_ETHERSCAN_KEY =
   process.env.BASE_ETHERSCAN_KEY || ETHERSCAN_KEY;
 export const MANTA_ETHERSCAN_KEY =
   process.env.MANTA_ETHERSCAN_KEY || ETHERSCAN_KEY;
+export const BSC_ETHERSCAN_KEY = process.env.BSC_ETHERSCAN_KEY || ETHERSCAN_KEY;
 
 export const ETHERSCAN_NETWORKS = [
   "localhost",
@@ -158,6 +160,7 @@ export const ETHERSCAN_NETWORKS = [
   "scroll",
   "base",
   "manta",
+  "bsc",
 ];
 export const ETHERSCAN_APIS = {
   localhost: "http://localhost:4000/api",
@@ -184,6 +187,7 @@ export const ETHERSCAN_APIS = {
   scroll: "https://api-scrollscan.com/api",
   base: "https://api-basescan.org/api",
   manta: "https://pacific-explorer.manta.network/api",
+  bsc: "https://bscscan.com/api",
 };
 export const BROWSER_URLS = {
   localhost: "http://localhost:4000",
@@ -209,6 +213,7 @@ export const BROWSER_URLS = {
   scroll: "https://scrollscan.com",
   base: "https://basescan.org",
   manta: "https://pacific-explorer.manta.network",
+  bsc: "https://bscscan.com",
 };
 
 export const DEFAULT_BLOCK_GAS_LIMIT = 40000000;

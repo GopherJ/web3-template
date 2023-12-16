@@ -29,6 +29,7 @@ import {
   SCROLL_CHAINID,
   BASE_CHAINID,
   MANTA_CHAINID,
+  BSC_CHAINID,
 } from "./helpers/constants";
 import {HardhatNetworkForkingUserConfig} from "hardhat/types";
 
@@ -99,12 +100,13 @@ export const NETWORKS_RPC_URL: iParamsPerNetwork<string> = {
     (INFURA_KEY
       ? `https://linea-goerli.infura.io/v3/${INFURA_KEY}`
       : `https://rpc.goerli.linea.build`),
-  [eEthereumNetwork.avalanche]: RPC_URL || "https://avalanche.drpc.org",
+  [eEthereumNetwork.avalanche]: RPC_URL || "https://rpc.ankr.com/avalanche",
   [eEthereumNetwork.optimism]:
     RPC_URL || `https://opt-mainnet.g.alchemy.com/v2/${ALCHEMY_KEY}`,
   [eEthereumNetwork.scroll]: RPC_URL || `https://rpc.scroll.io`,
   [eEthereumNetwork.base]: RPC_URL || `https://mainnet.base.org`,
   [eEthereumNetwork.manta]: RPC_URL || `https://pacific-rpc.manta.network/http`,
+  [eEthereumNetwork.bsc]: RPC_URL || `https://bsc.publicnode.com`,
 };
 
 export const CHAINS_ID: iParamsPerNetwork<number | undefined> = {
@@ -133,6 +135,7 @@ export const CHAINS_ID: iParamsPerNetwork<number | undefined> = {
   [eEthereumNetwork.scroll]: SCROLL_CHAINID,
   [eEthereumNetwork.base]: BASE_CHAINID,
   [eEthereumNetwork.manta]: MANTA_CHAINID,
+  [eEthereumNetwork.bsc]: BSC_CHAINID,
 };
 
 export const BLOCK_TO_FORK: iParamsPerNetwork<number | undefined> = {
@@ -161,4 +164,5 @@ export const BLOCK_TO_FORK: iParamsPerNetwork<number | undefined> = {
   [eEthereumNetwork.scroll]: undefined,
   [eEthereumNetwork.base]: undefined,
   [eEthereumNetwork.manta]: undefined,
+  [eEthereumNetwork.bsc]: undefined,
 };

@@ -55,6 +55,7 @@ export interface iEthereumParamsPerNetwork<T> {
   [eEthereumNetwork.scroll]: T;
   [eEthereumNetwork.base]: T;
   [eEthereumNetwork.manta]: T;
+  [eEthereumNetwork.bsc]: T;
 }
 
 export enum eContractid {
@@ -91,6 +92,7 @@ export enum eEthereumNetwork {
   scroll = "scroll",
   base = "base",
   manta = "manta",
+  bsc = "bsc",
 }
 
 export type ConstructorArgs = (

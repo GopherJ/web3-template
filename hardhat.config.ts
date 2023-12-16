@@ -32,6 +32,7 @@ import {
   SCROLL_ETHERSCAN_KEY,
   BASE_ETHERSCAN_KEY,
   MANTA_ETHERSCAN_KEY,
+  BSC_ETHERSCAN_KEY,
 } from "./helpers/constants";
 import {accounts} from "./wallets";
 import {
@@ -273,6 +274,11 @@ const hardhatConfig: HardhatUserConfig = {
       url: NETWORKS_RPC_URL[eEthereumNetwork.manta],
       accounts: DEPLOYER,
     },
+    bsc: {
+      chainId: CHAINS_ID[eEthereumNetwork.bsc],
+      url: NETWORKS_RPC_URL[eEthereumNetwork.bsc],
+      accounts: DEPLOYER,
+    },
   },
   etherscan: {
     apiKey: {
@@ -296,6 +302,7 @@ const hardhatConfig: HardhatUserConfig = {
       scroll: SCROLL_ETHERSCAN_KEY,
       base: BASE_ETHERSCAN_KEY,
       manta: MANTA_ETHERSCAN_KEY,
+      bsc: BSC_ETHERSCAN_KEY,
     },
     customChains: [
       eEthereumNetwork.localhost,
@@ -319,6 +326,7 @@ const hardhatConfig: HardhatUserConfig = {
       eEthereumNetwork.scroll,
       eEthereumNetwork.base,
       eEthereumNetwork.manta,
+      eEthereumNetwork.bsc,
     ].map((network) => ({
       network,
       chainId: CHAINS_ID[network]!,
