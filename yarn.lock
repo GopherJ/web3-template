@@ -4185,6 +4185,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"arconnect@npm:^0.4.2":
+  version: 0.4.2
+  resolution: "arconnect@npm:0.4.2"
+  dependencies:
+    arweave: ^1.10.13
+  checksum: 5b2f262a93a3a25d4bd6f72eb3afe4b13d0e94ed12f88b7bcf3501d25839e74c2882fa1a1a9b527ac9c6da22ca2f407c07fc49e3d898a4f24b5d66a1901173f8
+  languageName: node
+  linkType: hard
+
 "are-we-there-yet@npm:^3.0.0":
   version: 3.0.1
   resolution: "are-we-there-yet@npm:3.0.1"
@@ -4357,6 +4366,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"arweave@npm:^1.10.13, arweave@npm:^1.14.4":
+  version: 1.14.4
+  resolution: "arweave@npm:1.14.4"
+  dependencies:
+    arconnect: ^0.4.2
+    asn1.js: ^5.4.1
+    base64-js: ^1.5.1
+    bignumber.js: ^9.0.2
+  checksum: 99f4705531066508a511ceae1f9492a85758a9b9c19d5d24c79c37af00e025487ab16db6947d8e226ff288941998aa43fbc1954c84e55459e9ba2e3534aa12ce
+  languageName: node
+  linkType: hard
+
 "asap@npm:~2.0.6":
   version: 2.0.6
   resolution: "asap@npm:2.0.6"
@@ -4364,7 +4385,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"asn1.js@npm:^5.2.0":
+"asn1.js@npm:^5.2.0, asn1.js@npm:^5.4.1":
   version: 5.4.1
   resolution: "asn1.js@npm:5.4.1"
   dependencies:
@@ -5281,7 +5302,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"base64-js@npm:^1.0.2, base64-js@npm:^1.1.2, base64-js@npm:^1.3.0, base64-js@npm:^1.3.1":
+"base64-js@npm:^1.0.2, base64-js@npm:^1.1.2, base64-js@npm:^1.3.0, base64-js@npm:^1.3.1, base64-js@npm:^1.5.1":
   version: 1.5.1
   resolution: "base64-js@npm:1.5.1"
   checksum: 669632eb3745404c2f822a18fc3a0122d2f9a7a13f7fb8b5823ee19d1d2ff9ee5b52c53367176ea4ad093c332fd5ab4bd0ebae5a8e27917a4105a4cfc86b1005
@@ -5343,7 +5364,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bignumber.js@npm:^9.0.0, bignumber.js@npm:^9.0.1, bignumber.js@npm:^9.1.1":
+"bignumber.js@npm:^9.0.0, bignumber.js@npm:^9.0.1, bignumber.js@npm:^9.0.2, bignumber.js@npm:^9.1.1":
   version: 9.1.2
   resolution: "bignumber.js@npm:9.1.2"
   checksum: 582c03af77ec9cb0ebd682a373ee6c66475db94a4325f92299621d544aa4bd45cb45fd60001610e94aef8ae98a0905fa538241d9638d4422d57abbeeac6fadaf
@@ -16815,6 +16836,7 @@ __metadata:
     "@types/mocha": ^9.1.1
     "@types/node": ^18.0.6
     arb-shared-dependencies: ^1.0.0
+    arweave: ^1.14.4
     async: ^3.2.4
     axios: ^1.5.1
     bignumber.js: ^9.1.1

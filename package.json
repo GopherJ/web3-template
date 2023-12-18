@@ -70,6 +70,7 @@
     "@types/mocha": "^9.1.1",
     "@types/node": "^18.0.6",
     "arb-shared-dependencies": "^1.0.0",
+    "arweave": "^1.14.4",
     "async": "^3.2.4",
     "axios": "^1.5.1",
     "bignumber.js": "^9.1.1",
