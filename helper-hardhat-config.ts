@@ -32,6 +32,7 @@ import {
   BSC_CHAINID,
   ZKFAIR_CHAINID,
   METIS_CHAINID,
+  NEON_CHAINID,
 } from "./helpers/constants";
 import {HardhatNetworkForkingUserConfig} from "hardhat/types";
 
@@ -111,6 +112,8 @@ export const NETWORKS_RPC_URL: iParamsPerNetwork<string> = {
   [eEthereumNetwork.bsc]: RPC_URL || `https://bsc.publicnode.com`,
   [eEthereumNetwork.zkfair]: RPC_URL || `https://rpc.zkfair.io`,
   [eEthereumNetwork.metis]: RPC_URL || `https://metis.api.onfinality.io/public`,
+  [eEthereumNetwork.neon]:
+    RPC_URL || `https://neon-proxy-mainnet.solana.p2p.org`,
 };
 
 export const CHAINS_ID: iParamsPerNetwork<number | undefined> = {
@@ -142,6 +145,7 @@ export const CHAINS_ID: iParamsPerNetwork<number | undefined> = {
   [eEthereumNetwork.bsc]: BSC_CHAINID,
   [eEthereumNetwork.zkfair]: ZKFAIR_CHAINID,
   [eEthereumNetwork.metis]: METIS_CHAINID,
+  [eEthereumNetwork.neon]: NEON_CHAINID,
 };
 
 export const BLOCK_TO_FORK: iParamsPerNetwork<number | undefined> = {
@@ -173,4 +177,5 @@ export const BLOCK_TO_FORK: iParamsPerNetwork<number | undefined> = {
   [eEthereumNetwork.bsc]: undefined,
   [eEthereumNetwork.zkfair]: undefined,
   [eEthereumNetwork.metis]: undefined,
+  [eEthereumNetwork.neon]: undefined,
 };

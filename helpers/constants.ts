@@ -38,6 +38,7 @@ export const MANTA_CHAINID = 169;
 export const BSC_CHAINID = 56;
 export const ZKFAIR_CHAINID = 42766;
 export const METIS_CHAINID = 1088;
+export const NEON_CHAINID = 245022934;
 
 export const RPC_URL = process.env.RPC_URL || "";
 
@@ -141,6 +142,8 @@ export const ZKFAIR_ETHERSCAN_KEY =
   process.env.ZKFAIR_ETHERSCAN_KEY || ETHERSCAN_KEY;
 export const METIS_ETHERSCAN_KEY =
   process.env.METIS_ETHERSCAN_KEY || ETHERSCAN_KEY;
+export const NEON_ETHERSCAN_KEY =
+  process.env.NEON_ETHERSCAN_KEY || ETHERSCAN_KEY;
 
 export const ETHERSCAN_NETWORKS = [
   "localhost",
@@ -169,6 +172,7 @@ export const ETHERSCAN_NETWORKS = [
   "bsc",
   "zkfair",
   "metis",
+  "neon",
 ];
 export const ETHERSCAN_APIS = {
   localhost: "http://localhost:4000/api",
@@ -198,6 +202,7 @@ export const ETHERSCAN_APIS = {
   bsc: "https://bscscan.com/api",
   zkfair: "https://scan.zkfair.io/api",
   metis: "https://andromeda-explorer.metis.io/api",
+  neon: "https://neonscan.org/api",
 };
 export const BROWSER_URLS = {
   localhost: "http://localhost:4000",
@@ -226,6 +231,7 @@ export const BROWSER_URLS = {
   bsc: "https://bscscan.com",
   zkfair: "https://scan.zkfair.io",
   metis: "https://andromeda-explorer.metis.io",
+  neon: "https://neonscan.org",
 };
 
 export const DEFAULT_BLOCK_GAS_LIMIT = 40000000;
