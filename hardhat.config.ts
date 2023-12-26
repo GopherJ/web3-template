@@ -33,6 +33,7 @@ import {
   BASE_ETHERSCAN_KEY,
   MANTA_ETHERSCAN_KEY,
   BSC_ETHERSCAN_KEY,
+  ZKFAIR_ETHERSCAN_KEY,
 } from "./helpers/constants";
 import {accounts} from "./wallets";
 import {
@@ -279,6 +280,11 @@ const hardhatConfig: HardhatUserConfig = {
       url: NETWORKS_RPC_URL[eEthereumNetwork.bsc],
       accounts: DEPLOYER,
     },
+    zkfair: {
+      chainId: CHAINS_ID[eEthereumNetwork.zkfair],
+      url: NETWORKS_RPC_URL[eEthereumNetwork.zkfair],
+      accounts: DEPLOYER,
+    },
   },
   etherscan: {
     apiKey: {
@@ -303,6 +309,7 @@ const hardhatConfig: HardhatUserConfig = {
       base: BASE_ETHERSCAN_KEY,
       manta: MANTA_ETHERSCAN_KEY,
       bsc: BSC_ETHERSCAN_KEY,
+      zkfair: ZKFAIR_ETHERSCAN_KEY,
     },
     customChains: [
       eEthereumNetwork.localhost,
@@ -327,6 +334,7 @@ const hardhatConfig: HardhatUserConfig = {
       eEthereumNetwork.base,
       eEthereumNetwork.manta,
       eEthereumNetwork.bsc,
+      eEthereumNetwork.zkfair,
     ].map((network) => ({
       network,
       chainId: CHAINS_ID[network]!,

@@ -30,6 +30,7 @@ import {
   BASE_CHAINID,
   MANTA_CHAINID,
   BSC_CHAINID,
+  ZKFAIR_CHAINID,
 } from "./helpers/constants";
 import {HardhatNetworkForkingUserConfig} from "hardhat/types";
 
@@ -107,6 +108,7 @@ export const NETWORKS_RPC_URL: iParamsPerNetwork<string> = {
   [eEthereumNetwork.base]: RPC_URL || `https://mainnet.base.org`,
   [eEthereumNetwork.manta]: RPC_URL || `https://pacific-rpc.manta.network/http`,
   [eEthereumNetwork.bsc]: RPC_URL || `https://bsc.publicnode.com`,
+  [eEthereumNetwork.zkfair]: RPC_URL || `https://rpc.zkfair.io`,
 };
 
 export const CHAINS_ID: iParamsPerNetwork<number | undefined> = {
@@ -136,6 +138,7 @@ export const CHAINS_ID: iParamsPerNetwork<number | undefined> = {
   [eEthereumNetwork.base]: BASE_CHAINID,
   [eEthereumNetwork.manta]: MANTA_CHAINID,
   [eEthereumNetwork.bsc]: BSC_CHAINID,
+  [eEthereumNetwork.zkfair]: ZKFAIR_CHAINID,
 };
 
 export const BLOCK_TO_FORK: iParamsPerNetwork<number | undefined> = {
@@ -165,4 +168,5 @@ export const BLOCK_TO_FORK: iParamsPerNetwork<number | undefined> = {
   [eEthereumNetwork.base]: undefined,
   [eEthereumNetwork.manta]: undefined,
   [eEthereumNetwork.bsc]: undefined,
+  [eEthereumNetwork.zkfair]: undefined,
 };

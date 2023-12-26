@@ -36,6 +36,7 @@ export const SCROLL_CHAINID = 534352;
 export const BASE_CHAINID = 8453;
 export const MANTA_CHAINID = 169;
 export const BSC_CHAINID = 56;
+export const ZKFAIR_CHAINID = 42766;
 
 export const RPC_URL = process.env.RPC_URL || "";
 
@@ -135,6 +136,8 @@ export const BASE_ETHERSCAN_KEY =
 export const MANTA_ETHERSCAN_KEY =
   process.env.MANTA_ETHERSCAN_KEY || ETHERSCAN_KEY;
 export const BSC_ETHERSCAN_KEY = process.env.BSC_ETHERSCAN_KEY || ETHERSCAN_KEY;
+export const ZKFAIR_ETHERSCAN_KEY =
+  process.env.ZKFAIR_ETHERSCAN_KEY || ETHERSCAN_KEY;
 
 export const ETHERSCAN_NETWORKS = [
   "localhost",
@@ -161,6 +164,7 @@ export const ETHERSCAN_NETWORKS = [
   "base",
   "manta",
   "bsc",
+  "zkfair",
 ];
 export const ETHERSCAN_APIS = {
   localhost: "http://localhost:4000/api",
@@ -188,6 +192,7 @@ export const ETHERSCAN_APIS = {
   base: "https://api-basescan.org/api",
   manta: "https://pacific-explorer.manta.network/api",
   bsc: "https://bscscan.com/api",
+  zkfair: "https://scan.zkfair.io/api",
 };
 export const BROWSER_URLS = {
   localhost: "http://localhost:4000",
@@ -214,6 +219,7 @@ export const BROWSER_URLS = {
   base: "https://basescan.org",
   manta: "https://pacific-explorer.manta.network",
   bsc: "https://bscscan.com",
+  zkfair: "https://scan.zkfair.io",
 };
 
 export const DEFAULT_BLOCK_GAS_LIMIT = 40000000;
