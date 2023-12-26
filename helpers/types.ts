@@ -57,6 +57,7 @@ export interface iEthereumParamsPerNetwork<T> {
   [eEthereumNetwork.manta]: T;
   [eEthereumNetwork.bsc]: T;
   [eEthereumNetwork.zkfair]: T;
+  [eEthereumNetwork.metis]: T;
 }
 
 export enum eContractid {
@@ -95,6 +96,7 @@ export enum eEthereumNetwork {
   manta = "manta",
   bsc = "bsc",
   zkfair = "zkfair",
+  metis = "metis",
 }
 
 export type ConstructorArgs = (

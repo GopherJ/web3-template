@@ -35,6 +35,7 @@ import {
   MANTA_CHAINID,
   BSC_CHAINID,
   ZKFAIR_CHAINID,
+  METIS_CHAINID,
 } from "../helpers/constants";
 import dotenv from "dotenv";
 import minimatch from "minimatch";
@@ -197,6 +198,14 @@ export const isZkfair = (): boolean => {
   );
 };
 
+export const isMetis = (): boolean => {
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+  return (
+    [METIS_CHAINID].includes(DRE.network.config.chainId!) ||
+    [eEthereumNetwork.metis].includes(FORK as eEthereumNetwork)
+  );
+};
+
 export const isMainnet = (): boolean =>
   isEthereum() ||
   isMoonbeam() ||
@@ -211,7 +220,8 @@ export const isMainnet = (): boolean =>
   isBase() ||
   isManta() ||
   isBsc() ||
-  isZkfair();
+  isZkfair() ||
+  isMetis();
 
 export const sleep = (ms: number) =>
   new Promise((resolve) => setTimeout(resolve, ms));
