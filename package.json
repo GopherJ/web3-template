@@ -1,7 +1,7 @@
 {
-  "name": "solidity-template",
+  "name": "web3-template",
   "version": "1.0.0",
-  "description": "solidity-template",
+  "description": "web3-template",
   "main": "index.js",
   "directories": {
     "lib": "lib",
@@ -19,7 +19,7 @@
     "coverage": "hardhat coverage --testfiles 'test/*.ts'"
   },
   "keywords": [],
-  "author": "",
+  "author": "CJ",
   "license": "ISC",
   "resolutions": {
     "ethereumjs-abi": "https://registry.npmjs.org/ethereumjs-abi/-/ethereumjs-abi-0.6.8.tgz"
@@ -27,6 +27,7 @@
   "devDependencies": {
     "@arbitrum/nitro-contracts": "^1.1.0",
     "@arbitrum/sdk": "^3.1.13",
+    "@coral-xyz/anchor": "^0.29.0",
     "@cosmjs/proto-signing": "^0.32.1",
     "@cosmjs/stargate": "^0.32.1",
     "@ethereumjs/rlp": "^5.0.0",
