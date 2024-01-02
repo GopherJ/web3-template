@@ -2785,6 +2785,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@project-serum/borsh@npm:^0.2.5":
+  version: 0.2.5
+  resolution: "@project-serum/borsh@npm:0.2.5"
+  dependencies:
+    bn.js: ^5.1.2
+    buffer-layout: ^1.2.0
+  peerDependencies:
+    "@solana/web3.js": ^1.2.0
+  checksum: 7bdc25e8d6cca13166869c8f09db2fabf103e8dc4861f09f277bb0080dfaaed9f50d4b5e2579bc2c975db263faaa92539d5ddb84a2f4d8cf09f3c6e6bddf79e1
+  languageName: node
+  linkType: hard
+
 "@protobufjs/aspromise@npm:^1.1.1, @protobufjs/aspromise@npm:^1.1.2":
   version: 1.1.2
   resolution: "@protobufjs/aspromise@npm:1.1.2"
@@ -19085,6 +19097,7 @@ __metadata:
     "@polkadot/util": ^12.6.1
     "@polkadot/util-crypto": ^12.6.1
     "@prb/math": ^2.5.0
+    "@project-serum/borsh": ^0.2.5
     "@safe-global/safe-core-sdk": ^3.2.0
     "@safe-global/safe-core-sdk-types": ^1.7.0
     "@safe-global/safe-ethers-lib": ^1.7.0
