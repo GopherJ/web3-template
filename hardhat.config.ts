@@ -153,16 +153,6 @@ const hardhatConfig: HardhatUserConfig = {
       allowUnlimitedContractSize: true,
       timeout: 9000000,
     },
-    moonbeam: {
-      chainId: CHAINS_ID[eEthereumNetwork.moonbeam],
-      url: NETWORKS_RPC_URL[eEthereumNetwork.moonbeam],
-      accounts: DEPLOYER,
-    },
-    moonbase: {
-      chainId: CHAINS_ID[eEthereumNetwork.moonbase],
-      url: NETWORKS_RPC_URL[eEthereumNetwork.moonbase],
-      accounts: DEPLOYER,
-    },
     hardhat: {
       hardfork: HARDFORK,
       blockGasLimit: DEFAULT_BLOCK_GAS_LIMIT,
@@ -175,6 +165,16 @@ const hardhatConfig: HardhatUserConfig = {
       loggingEnabled: VERBOSE,
       forking: buildForkConfig(),
       allowUnlimitedContractSize: true,
+    },
+    moonbeam: {
+      chainId: CHAINS_ID[eEthereumNetwork.moonbeam],
+      url: NETWORKS_RPC_URL[eEthereumNetwork.moonbeam],
+      accounts: DEPLOYER,
+    },
+    moonbase: {
+      chainId: CHAINS_ID[eEthereumNetwork.moonbase],
+      url: NETWORKS_RPC_URL[eEthereumNetwork.moonbase],
+      accounts: DEPLOYER,
     },
     goerli: {
       chainId: CHAINS_ID[eEthereumNetwork.goerli],
