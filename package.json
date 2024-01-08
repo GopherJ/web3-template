@@ -13,10 +13,10 @@
     "typechain": "hardhat typechain",
     "clean": "hardhat clean",
     "doc": "hardhat docgen",
-    "lint": "tsc --noEmit -skipLibCheck && solhint 'src/**/*.sol' && prettier --check 'src/**/*.sol' 'helpers/**/*.ts' 'tasks/**/*.ts' 'hardhat.config.ts' 'helper-hardhat-config.ts'",
-    "format": "prettier --write 'src/**/*.sol' 'helpers/**/*.ts' 'tasks/**/*.ts' 'hardhat.config.ts' 'helper-hardhat-config.ts'",
-    "test": "hardhat test ./test/*.ts",
-    "coverage": "hardhat coverage --testfiles 'test/*.ts'"
+    "lint": "tsc --noEmit -skipLibCheck && solhint 'src/**/*.sol' && prettier --check 'src/**/*.sol' 'helpers/**/*.ts' 'tasks/**/*.ts' 'scripts/**/*.ts' 'hardhat.config.ts' 'helper-hardhat-config.ts'",
+    "format": "prettier --write 'src/**/*.sol' 'helpers/**/*.ts' 'tasks/**/*.ts' 'scripts/**/*.ts' 'hardhat.config.ts' 'helper-hardhat-config.ts'",
+    "test": "hardhat test ./tests/*.ts",
+    "coverage": "hardhat coverage --testfiles 'tests/*.ts'"
   },
   "keywords": [],
   "author": "CJ",
