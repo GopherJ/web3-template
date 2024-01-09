@@ -48,6 +48,8 @@
     "@matterlabs/hardhat-zksync-solc": "^0.4.0",
     "@matterlabs/hardhat-zksync-verify": "^0.1.8",
     "@matterlabs/zksync-contracts": "^0.6.1",
+    "@metaplex-foundation/beet": "^0.7.2",
+    "@metaplex-foundation/beet-solana": "^0.4.1",
     "@metaplex-foundation/js": "^0.20.1",
     "@metaplex-foundation/mpl-token-metadata": "^3.1.2",
     "@nomicfoundation/hardhat-network-helpers": "^1.0.6",
