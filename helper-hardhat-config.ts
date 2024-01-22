@@ -59,17 +59,17 @@ export const NETWORKS_RPC_URL: iParamsPerNetwork<string> = {
   [eEthereumNetwork.goerli]:
     RPC_URL ||
     (ALCHEMY_KEY
-      ? `https://eth-goerli.alchemyapi.io/v2/${ALCHEMY_KEY}`
+      ? `https://eth-goerli.g.alchemy.com/v2/${ALCHEMY_KEY}`
       : `https://goerli.infura.io/v3/${INFURA_KEY}`),
   [eEthereumNetwork.sepolia]:
     RPC_URL ||
     (ALCHEMY_KEY
-      ? `https://eth-sepolia.alchemyapi.io/v2/${ALCHEMY_KEY}`
+      ? `https://eth-sepolia.g.alchemy.com/v2/${ALCHEMY_KEY}`
       : `https://sepolia.infura.io/v3/${INFURA_KEY}`),
   [eEthereumNetwork.mainnet]:
     RPC_URL ||
     (ALCHEMY_KEY
-      ? `https://eth-mainnet.alchemyapi.io/v2/${ALCHEMY_KEY}`
+      ? `https://eth-mainnet.g.alchemy.com/v2/${ALCHEMY_KEY}`
       : `https://mainnet.infura.io/v3/${INFURA_KEY}`),
   [eEthereumNetwork.hardhat]: RPC_URL || "http://localhost:8545",
   [eEthereumNetwork.anvil]: RPC_URL || "http://localhost:8545",
