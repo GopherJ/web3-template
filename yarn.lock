@@ -5328,6 +5328,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"async@npm:0.2.x":
+  version: 0.2.10
+  resolution: "async@npm:0.2.10"
+  checksum: 9ea83419ba67dc4ecf42d4eb0d93ce0ac80a67cabb612f160ed096aef5d001e3184ec9e9be5d4dc39b2c51a34e2ae16f9b21d737068b0f615fccb4eea16d0138
+  languageName: node
+  linkType: hard
+
 "async@npm:1.x, async@npm:^1.4.2":
   version: 1.5.2
   resolution: "async@npm:1.5.2"
@@ -6376,6 +6383,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"bitcore-p2p@npm:^10.0.23":
+  version: 10.0.23
+  resolution: "bitcore-p2p@npm:10.0.23"
+  dependencies:
+    bitcore-lib: ^10.0.23
+    bloom-filter: ^0.2.0
+    buffers: "github:bitpay/node-buffers#v0.1.2-bitpay"
+    socks5-client: ^0.3.6
+  checksum: 67e76618ceef4634999ac0c6275ed0e87b220c86d1f4769ac254b03ea93bc4820a2813baafc701c33a47f9708739e51ed30aee3a04642de6633e26e4c85cbb82
+  languageName: node
+  linkType: hard
+
 "bl@npm:^1.0.0":
   version: 1.2.3
   resolution: "bl@npm:1.2.3"
@@ -6410,6 +6429,13 @@ __metadata:
   dependencies:
     browser-readablestream-to-it: ^1.0.3
   checksum: e7fbebe5bd7b8187a4a88203639777456596a0cc68372e7b2dbcfbae6dea2b80e2a89522140039b538140bc3e3a6b1e90d1778e725eb8899070f799e61591751
+  languageName: node
+  linkType: hard
+
+"bloom-filter@npm:^0.2.0":
+  version: 0.2.0
+  resolution: "bloom-filter@npm:0.2.0"
+  checksum: 0a19b85cbdbd44baf5511c85844b220a8f2a03591700bbffae223df1176f749aefe31d4afdd0bc647a8d17c49f36aa3577978792154e1e442a2b0e633aab2ab5
   languageName: node
   linkType: hard
 
@@ -6833,6 +6859,13 @@ __metadata:
     base64-js: ^1.3.1
     ieee754: ^1.1.13
   checksum: e2cf8429e1c4c7b8cbd30834ac09bd61da46ce35f5c22a78e6c2f04497d6d25541b16881e30a019c6fd3154150650ccee27a308eff3e26229d788bbdeb08ab84
+  languageName: node
+  linkType: hard
+
+"buffers@github:bitpay/node-buffers#v0.1.2-bitpay":
+  version: 0.1.1
+  resolution: "buffers@https://github.com/bitpay/node-buffers.git#commit=fb509ded0d7f1fc0f6fa6662abf9e533018a57df"
+  checksum: 8aeeae491960f5f03b50a9816fdfb60db2311f9518e34901e9cf2a7d6fa3b51865466801bbe35b907e2d09896f9186cccac956b14d5dd96b1e4287820d02643c
   languageName: node
   linkType: hard
 
@@ -7423,6 +7456,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"cli@npm:0.4.x":
+  version: 0.4.5
+  resolution: "cli@npm:0.4.5"
+  dependencies:
+    glob: ">= 3.1.4"
+  checksum: f921b59b09aefe663ce379fac0ba1fbfab3d0a90cced329942955d366bbad9cd501a95690f8b25a5cadb0367b3b93a88a6ac44998bf2c0e28004b4a92eee6caa
+  languageName: node
+  linkType: hard
+
+"cliff@npm:0.1.x":
+  version: 0.1.10
+  resolution: "cliff@npm:0.1.10"
+  dependencies:
+    colors: ~1.0.3
+    eyes: ~0.1.8
+    winston: 0.8.x
+  checksum: 337bac325383b63100146a916b19af154cf1e82b5b7182ec2b6f9d0324e5b4ded9e81181a1be6a3f3c050658520535cbaf36422f0244f0a2eac5c271aa9de9fb
+  languageName: node
+  linkType: hard
+
 "cliui@npm:^3.2.0":
   version: 3.2.0
   resolution: "cliui@npm:3.2.0"
@@ -7544,10 +7597,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"colors@npm:0.6.x":
+  version: 0.6.2
+  resolution: "colors@npm:0.6.2"
+  checksum: 3f48cadb26ef1809847f3c0ff1e1dc4b2e2af4ace54dd9cd7491bfcaafef3abaac7cb063cb91f98f305bba8a6fa74720a8856610629f9c889b1eb4cd84a120a3
+  languageName: node
+  linkType: hard
+
 "colors@npm:1.4.0, colors@npm:^1.1.2":
   version: 1.4.0
   resolution: "colors@npm:1.4.0"
   checksum: 98aa2c2418ad87dedf25d781be69dc5fc5908e279d9d30c34d8b702e586a0474605b3a189511482b9d5ed0d20c867515d22749537f7bc546256c6014f3ebdcec
+  languageName: node
+  linkType: hard
+
+"colors@npm:~1.0.3":
+  version: 1.0.3
+  resolution: "colors@npm:1.0.3"
+  checksum: 234e8d3ab7e4003851cdd6a1f02eaa16dabc502ee5f4dc576ad7959c64b7477b15bd21177bab4055a4c0a66aa3d919753958030445f87c39a253d73b7a3637f5
   languageName: node
   linkType: hard
 
@@ -8115,6 +8182,13 @@ __metadata:
     csv-stringify: ^5.6.5
     stream-transform: ^2.1.3
   checksum: 0decc2d0d7a0abf127f4556d6f3cef5a54015b78d348608b5e8f42256c2bd0a021f34f1efc9723b2cd162680917de4c0b3967bfb65a07305eca0827654ca727e
+  languageName: node
+  linkType: hard
+
+"cycle@npm:1.0.x":
+  version: 1.0.3
+  resolution: "cycle@npm:1.0.3"
+  checksum: b9f131094fb832a8c4ba18c6d2dc9c87fc80d3242847a45f0a5f70911b2acab68abc1c25eb23e5155fcf2135a27d8fcc3635556745b03b488c4f360cfbc352df
   languageName: node
   linkType: hard
 
@@ -10115,7 +10189,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eyes@npm:^0.1.8":
+"eyes@npm:0.1.x, eyes@npm:^0.1.8, eyes@npm:~0.1.8":
   version: 0.1.8
   resolution: "eyes@npm:0.1.8"
   checksum: c31703a92bf36ba75ee8d379ee7985c24ee6149f3a6175f44cec7a05b178c38bce9836d3ca48c9acb0329a960ac2c4b2ead4e60cdd4fe6e8c92cad7cd6913687
@@ -11117,6 +11191,21 @@ __metadata:
     minipass: ^4.2.4
     path-scurry: ^1.6.1
   checksum: 94b093adbc591bc36b582f77927d1fb0dbf3ccc231828512b017601408be98d1fe798fc8c0b19c6f2d1a7660339c3502ce698de475e9d938ccbb69b47b647c84
+  languageName: node
+  linkType: hard
+
+"glob@npm:>= 3.1.4":
+  version: 10.3.10
+  resolution: "glob@npm:10.3.10"
+  dependencies:
+    foreground-child: ^3.1.0
+    jackspeak: ^2.3.5
+    minimatch: ^9.0.1
+    minipass: ^5.0.0 || ^6.0.2 || ^7.0.0
+    path-scurry: ^1.10.1
+  bin:
+    glob: dist/esm/bin.mjs
+  checksum: 4f2fe2511e157b5a3f525a54092169a5f92405f24d2aed3142f4411df328baca13059f4182f1db1bf933e2c69c0bd89e57ae87edd8950cba8c7ccbe84f721cf3
   languageName: node
   linkType: hard
 
@@ -12312,6 +12401,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"ipv6@npm:~3.1.1":
+  version: 3.1.3
+  resolution: "ipv6@npm:3.1.3"
+  dependencies:
+    cli: 0.4.x
+    cliff: 0.1.x
+    sprintf: 0.1.x
+  bin:
+    ipv6: bin/ipv6.js
+    ipv6grep: bin/ipv6grep.js
+  checksum: 17b069e329d5439118c431d450ee1c693782d40e639930ed45356a23f9d569a7412c319f4d5a4fc11db0d6bd9413b6bed2747ad64141012533ee5bcf8ad6a0c0
+  languageName: node
+  linkType: hard
+
 "is-accessor-descriptor@npm:^0.1.6":
   version: 0.1.6
   resolution: "is-accessor-descriptor@npm:0.1.6"
@@ -12869,7 +12972,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"isstream@npm:~0.1.2":
+"isstream@npm:0.1.x, isstream@npm:~0.1.2":
   version: 0.1.2
   resolution: "isstream@npm:0.1.2"
   checksum: 1eb2fe63a729f7bdd8a559ab552c69055f4f48eb5c2f03724430587c6f450783c8f1cd936c1c952d0a927925180fcc892ebd5b174236cf1065d4bd5bdb37e963
@@ -12945,6 +13048,19 @@ __metadata:
     "@pkgjs/parseargs":
       optional: true
   checksum: 4313a7c0cc44c7753c4cb9869935f0b06f4cf96827515f63f58ff46b3d2f6e29aba6b3b5151778397c3f5ae67ef8bfc48871967bd10343c27e90cff198ec7808
+  languageName: node
+  linkType: hard
+
+"jackspeak@npm:^2.3.5":
+  version: 2.3.6
+  resolution: "jackspeak@npm:2.3.6"
+  dependencies:
+    "@isaacs/cliui": ^8.0.2
+    "@pkgjs/parseargs": ^0.11.0
+  dependenciesMeta:
+    "@pkgjs/parseargs":
+      optional: true
+  checksum: 57d43ad11eadc98cdfe7496612f6bbb5255ea69fe51ea431162db302c2a11011642f50cfad57288bd0aea78384a0612b16e131944ad8ecd09d619041c8531b54
   languageName: node
   linkType: hard
 
@@ -15202,6 +15318,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"network-byte-order@npm:~0.2.0":
+  version: 0.2.0
+  resolution: "network-byte-order@npm:0.2.0"
+  checksum: f7f458d37a9ee4b795ef72df6dd16bee44d2b29c14497682b013dab78bdbf8f78a1da3726e38435e604df29cf1bab1549ece66321ad79b62507127ffbb988c7a
+  languageName: node
+  linkType: hard
+
 "next-tick@npm:^1.1.0":
   version: 1.1.0
   resolution: "next-tick@npm:1.1.0"
@@ -16222,6 +16345,13 @@ __metadata:
   dependencies:
     find-up: ^4.0.0
   checksum: 9863e3f35132bf99ae1636d31ff1e1e3501251d480336edb1c211133c8d58906bed80f154a1d723652df1fda91e01c7442c2eeaf9dc83157c7ae89087e43c8d6
+  languageName: node
+  linkType: hard
+
+"pkginfo@npm:0.3.x":
+  version: 0.3.1
+  resolution: "pkginfo@npm:0.3.1"
+  checksum: b59f7878ed169301930f5eab767d6b82a1c1e0831c3d1381c8dd04ef8a883fc895c067d06ce6d6111eff06130ad94bd8a518c7a227cc5e9914eedab2ee8512a7
   languageName: node
   linkType: hard
 
@@ -18006,6 +18136,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"socks5-client@npm:^0.3.6":
+  version: 0.3.6
+  resolution: "socks5-client@npm:0.3.6"
+  dependencies:
+    ipv6: ~3.1.1
+    network-byte-order: ~0.2.0
+  checksum: c741bb439674ba5ee2ef65a2e5abef23e2cb5dc9e0a1c5cb12dba3f77302cdb0bb2108b19b16e63ef600509df3d58ec6b708dd55ad3f6c287378d81a1dd2ff7a
+  languageName: node
+  linkType: hard
+
 "socks@npm:^2.6.2":
   version: 2.7.1
   resolution: "socks@npm:2.7.1"
@@ -18307,6 +18447,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"sprintf@npm:0.1.x":
+  version: 0.1.5
+  resolution: "sprintf@npm:0.1.5"
+  checksum: 63126376a680da456309ff19df9f9d47373de6a0543744d085f2c80db1c2f3a521a45482f761c78fd822bb1474b9d884be04aa8eeec234b9806fd14a3b0b6d49
+  languageName: node
+  linkType: hard
+
 "ssh2@npm:^1.11.0":
   version: 1.14.0
   resolution: "ssh2@npm:1.14.0"
@@ -18351,6 +18498,13 @@ __metadata:
   dependencies:
     minipass: ^7.0.3
   checksum: 0a31b65f21872dea1ed3f7c200d7bc1c1b91c15e419deca14f282508ba917cbb342c08a6814c7f68ca4ca4116dd1a85da2bbf39227480e50125a1ceffeecb750
+  languageName: node
+  linkType: hard
+
+"stack-trace@npm:0.0.x":
+  version: 0.0.10
+  resolution: "stack-trace@npm:0.0.10"
+  checksum: 473036ad32f8c00e889613153d6454f9be0536d430eb2358ca51cad6b95cea08a3cc33cc0e34de66b0dad221582b08ed2e61ef8e13f4087ab690f388362d6610
   languageName: node
   linkType: hard
 
@@ -20533,6 +20687,7 @@ __metadata:
     bip39: ^3.1.0
     bitcoinjs-lib: ^6.1.5
     bitcore-lib: ^10.0.23
+    bitcore-p2p: ^10.0.23
     borsh: ^2.0.0
     brotli: ^1.3.3
     bs58: ^5.0.0
@@ -20823,6 +20978,21 @@ __metadata:
   bin:
     window-size: cli.js
   checksum: a85e2acf156cfa194301294809867bdadd8a48ee5d972d9fa8e3e1b3420a1d0201b13ac8eb0348a0d14bbf2c3316565b6a749749c2384c5d286caf8a064c4f90
+  languageName: node
+  linkType: hard
+
+"winston@npm:0.8.x":
+  version: 0.8.3
+  resolution: "winston@npm:0.8.3"
+  dependencies:
+    async: 0.2.x
+    colors: 0.6.x
+    cycle: 1.0.x
+    eyes: 0.1.x
+    isstream: 0.1.x
+    pkginfo: 0.3.x
+    stack-trace: 0.0.x
+  checksum: fa2b3dac3a40dcbd135e0bcbbbc998ff050e88310c946f5c7af709dfce2a1bd0b59dff22ed969418eb00b0609ed7fb463bbef558fe32c031b080f57cdd50d428
   languageName: node
   linkType: hard
 
