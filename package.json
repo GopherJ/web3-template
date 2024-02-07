@@ -120,6 +120,7 @@
     "js-base64": "^3.7.5",
     "lodash": "^4.17.21",
     "lowdb": "1.0.0",
+    "mime-types": "^2.1.35",
     "prettier": "^2.4.1",
     "prettier-plugin-solidity": "^1.0.0-alpha.53",
     "prompt-sync": "^4.2.0",

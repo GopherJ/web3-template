@@ -14561,7 +14561,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mime-types@npm:^2.1.12, mime-types@npm:^2.1.16, mime-types@npm:^2.1.34, mime-types@npm:~2.1.19, mime-types@npm:~2.1.24, mime-types@npm:~2.1.34":
+"mime-types@npm:^2.1.12, mime-types@npm:^2.1.16, mime-types@npm:^2.1.34, mime-types@npm:^2.1.35, mime-types@npm:~2.1.19, mime-types@npm:~2.1.24, mime-types@npm:~2.1.34":
   version: 2.1.35
   resolution: "mime-types@npm:2.1.35"
   dependencies:
@@ -20715,6 +20715,7 @@ __metadata:
     js-base64: ^3.7.5
     lodash: ^4.17.21
     lowdb: 1.0.0
+    mime-types: ^2.1.35
     prettier: ^2.4.1
     prettier-plugin-solidity: ^1.0.0-alpha.53
     prompt-sync: ^4.2.0
