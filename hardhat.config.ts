@@ -36,6 +36,7 @@ import {
   ZKFAIR_ETHERSCAN_KEY,
   METIS_ETHERSCAN_KEY,
   NEON_ETHERSCAN_KEY,
+  BLAST_ETHERSCAN_KEY,
 } from "./helpers/constants";
 import {accounts} from "./wallets";
 import {
@@ -297,6 +298,11 @@ const hardhatConfig: HardhatUserConfig = {
       url: NETWORKS_RPC_URL[eEthereumNetwork.neon],
       accounts: DEPLOYER,
     },
+    blast: {
+      chainId: CHAINS_ID[eEthereumNetwork.blast],
+      url: NETWORKS_RPC_URL[eEthereumNetwork.blast],
+      accounts: DEPLOYER,
+    },
   },
   etherscan: {
     apiKey: {
@@ -324,6 +330,7 @@ const hardhatConfig: HardhatUserConfig = {
       zkfair: ZKFAIR_ETHERSCAN_KEY,
       metis: METIS_ETHERSCAN_KEY,
       neon: NEON_ETHERSCAN_KEY,
+      blast: BLAST_ETHERSCAN_KEY,
     },
     customChains: [
       eEthereumNetwork.localhost,
@@ -351,6 +358,7 @@ const hardhatConfig: HardhatUserConfig = {
       eEthereumNetwork.zkfair,
       eEthereumNetwork.metis,
       eEthereumNetwork.neon,
+      eEthereumNetwork.blast,
     ].map((network) => ({
       network,
       chainId: CHAINS_ID[network]!,
