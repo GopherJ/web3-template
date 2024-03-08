@@ -37,6 +37,7 @@ import {
   METIS_ETHERSCAN_KEY,
   NEON_ETHERSCAN_KEY,
   BLAST_ETHERSCAN_KEY,
+  BERA_ETHERSCAN_KEY,
 } from "./helpers/constants";
 import {accounts} from "./wallets";
 import {
@@ -303,6 +304,11 @@ const hardhatConfig: HardhatUserConfig = {
       url: NETWORKS_RPC_URL[eEthereumNetwork.blast],
       accounts: DEPLOYER,
     },
+    bera: {
+      chainId: CHAINS_ID[eEthereumNetwork.bera],
+      url: NETWORKS_RPC_URL[eEthereumNetwork.bera],
+      accounts: DEPLOYER,
+    },
   },
   etherscan: {
     apiKey: {
@@ -331,6 +337,7 @@ const hardhatConfig: HardhatUserConfig = {
       metis: METIS_ETHERSCAN_KEY,
       neon: NEON_ETHERSCAN_KEY,
       blast: BLAST_ETHERSCAN_KEY,
+      bera: BERA_ETHERSCAN_KEY,
     },
     customChains: [
       eEthereumNetwork.localhost,
@@ -359,6 +366,7 @@ const hardhatConfig: HardhatUserConfig = {
       eEthereumNetwork.metis,
       eEthereumNetwork.neon,
       eEthereumNetwork.blast,
+      eEthereumNetwork.bera,
     ].map((network) => ({
       network,
       chainId: CHAINS_ID[network]!,

@@ -40,6 +40,7 @@ export const ZKFAIR_CHAINID = 42766;
 export const METIS_CHAINID = 1088;
 export const NEON_CHAINID = 245022934;
 export const BLAST_CHAINID = 81457;
+export const BERA_CHAINID = 80085;
 
 export const RPC_URL = process.env.RPC_URL || "";
 
@@ -147,6 +148,8 @@ export const NEON_ETHERSCAN_KEY =
   process.env.NEON_ETHERSCAN_KEY || ETHERSCAN_KEY;
 export const BLAST_ETHERSCAN_KEY =
   process.env.BLAST_ETHERSCAN_KEY || ETHERSCAN_KEY;
+export const BERA_ETHERSCAN_KEY =
+  process.env.BERA_ETHERSCAN_KEY || ETHERSCAN_KEY;
 
 export const ETHERSCAN_NETWORKS = [
   "localhost",
@@ -177,6 +180,7 @@ export const ETHERSCAN_NETWORKS = [
   "metis",
   "neon",
   "blast",
+  "bera",
 ];
 export const ETHERSCAN_APIS = {
   localhost: "http://localhost:4000/api",
@@ -208,6 +212,7 @@ export const ETHERSCAN_APIS = {
   metis: "https://andromeda-explorer.metis.io/api",
   neon: "https://neonscan.org/api",
   blast: "https://blastscan.io/api",
+  bera: "https://artio.beratrail.io/api",
 };
 export const BROWSER_URLS = {
   localhost: "http://localhost:4000",
@@ -238,6 +243,7 @@ export const BROWSER_URLS = {
   metis: "https://andromeda-explorer.metis.io",
   neon: "https://neonscan.org",
   blast: "https://blastscan.io",
+  bera: "https://artio.beratrail.io",
 };
 
 export const DEFAULT_BLOCK_GAS_LIMIT = 40000000;

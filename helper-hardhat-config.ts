@@ -34,6 +34,7 @@ import {
   METIS_CHAINID,
   NEON_CHAINID,
   BLAST_CHAINID,
+  BERA_CHAINID,
 } from "./helpers/constants";
 import {HardhatNetworkForkingUserConfig} from "hardhat/types";
 
@@ -116,6 +117,7 @@ export const NETWORKS_RPC_URL: iParamsPerNetwork<string> = {
   [eEthereumNetwork.neon]:
     RPC_URL || `https://neon-proxy-mainnet.solana.p2p.org`,
   [eEthereumNetwork.blast]: RPC_URL || `https://rpc.blast.io`,
+  [eEthereumNetwork.bera]: RPC_URL || `https://artio.rpc.berachain.com`,
 };
 
 export const CHAINS_ID: iParamsPerNetwork<number | undefined> = {
@@ -149,6 +151,7 @@ export const CHAINS_ID: iParamsPerNetwork<number | undefined> = {
   [eEthereumNetwork.metis]: METIS_CHAINID,
   [eEthereumNetwork.neon]: NEON_CHAINID,
   [eEthereumNetwork.blast]: BLAST_CHAINID,
+  [eEthereumNetwork.bera]: BERA_CHAINID,
 };
 
 export const BLOCK_TO_FORK: iParamsPerNetwork<number | undefined> = {
@@ -182,4 +185,5 @@ export const BLOCK_TO_FORK: iParamsPerNetwork<number | undefined> = {
   [eEthereumNetwork.metis]: undefined,
   [eEthereumNetwork.neon]: undefined,
   [eEthereumNetwork.blast]: undefined,
+  [eEthereumNetwork.bera]: undefined,
 };

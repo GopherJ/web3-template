@@ -60,6 +60,7 @@ export interface iEthereumParamsPerNetwork<T> {
   [eEthereumNetwork.metis]: T;
   [eEthereumNetwork.neon]: T;
   [eEthereumNetwork.blast]: T;
+  [eEthereumNetwork.bera]: T;
 }
 
 export enum eContractid {
@@ -101,6 +102,7 @@ export enum eEthereumNetwork {
   metis = "metis",
   neon = "neon",
   blast = "blast",
+  bera = "bera",
 }
 
 export type ConstructorArgs = (

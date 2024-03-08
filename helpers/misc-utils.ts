@@ -38,6 +38,7 @@ import {
   METIS_CHAINID,
   NEON_CHAINID,
   BLAST_CHAINID,
+  BERA_CHAINID,
 } from "../helpers/constants";
 import dotenv from "dotenv";
 import minimatch from "minimatch";
@@ -224,6 +225,14 @@ export const isBlast = (): boolean => {
   );
 };
 
+export const isBera = (): boolean => {
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+  return (
+    [BERA_CHAINID].includes(DRE.network.config.chainId!) ||
+    [eEthereumNetwork.bera].includes(FORK as eEthereumNetwork)
+  );
+};
+
 export const isMainnet = (): boolean =>
   isEthereum() ||
   isMoonbeam() ||
@@ -241,7 +250,8 @@ export const isMainnet = (): boolean =>
   isZkfair() ||
   isMetis() ||
   isNeon() ||
-  isBlast();
+  isBlast() ||
+  isBera();
 
 export const sleep = (ms: number) =>
   new Promise((resolve) => setTimeout(resolve, ms));
